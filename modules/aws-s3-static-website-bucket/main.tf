@@ -36,12 +36,13 @@ resource "aws_s3_bucket_object" "index" {
   bucket = var.bucket_name
   key    = "index.html"
   source = "${path.module}/www/index.html"
-
+  content_type = "text/html"
 }
 
 resource "aws_s3_bucket_object" "error" {
   bucket = var.bucket_name
   key    = "error.html"
   source = "${path.module}/www/error.html"
+  content_type = "text/html"
 
 }

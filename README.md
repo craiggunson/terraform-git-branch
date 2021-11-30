@@ -8,4 +8,4 @@ Goals
 1. DRY re-use modules/resources - reduced copy/pasta.  
 
 
-[Forked from here](https://learn.hashicorp.com/tutorials/terraform/module-create?in=terraform/modules).
+[Forked from here](https://learn.hashicorp.com/tutorials/terraform/module-create?in=terraform/modules), loosely based on [this](https://learn.hashicorp.com/tutorials/terraform/organize-configuration) 
