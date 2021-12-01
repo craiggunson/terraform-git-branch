@@ -37,6 +37,7 @@ resource "aws_s3_bucket_object" "index" {
   key    = "index.html"
   source = "${path.module}/www/index.html"
   content_type = "text/html"
+  depends_on = [aws_s3_bucket.s3_bucket]
 }
 
 resource "aws_s3_bucket_object" "error" {
@@ -44,5 +45,7 @@ resource "aws_s3_bucket_object" "error" {
   key    = "error.html"
   source = "${path.module}/www/error.html"
   content_type = "text/html"
+  depends_on = [aws_s3_bucket.s3_bucket]
+
 
 }
