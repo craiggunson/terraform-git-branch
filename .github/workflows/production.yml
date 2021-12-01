@@ -24,4 +24,5 @@ jobs:
     - name: Deploy to production.
       run: |
         cd ./prod
+        terraform init -migrate-state
         terraform apply -auto-approve

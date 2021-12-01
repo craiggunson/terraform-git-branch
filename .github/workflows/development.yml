@@ -26,8 +26,11 @@ jobs:
       with:
         terraform_wrapper: false
 
-    - name: Apply
+    - name: Apply  # could throw branch var here for paralell builds.
       run: |
         cd ./dev
+        echo ${GITHUB_REF##*/}
         terraform init -migrate-state
         terraform apply -auto-approve -var bucket_name=craigtfdev
+
+    # could add teardown here
