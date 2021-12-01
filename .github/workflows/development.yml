@@ -29,4 +29,5 @@ jobs:
     - name: Apply
       run: |
         cd ./dev
+        terraform init -reconfigure
         terraform apply -auto-approve -var bucket_name=craigtfdev
