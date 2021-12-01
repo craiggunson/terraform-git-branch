@@ -31,6 +31,7 @@ jobs:
         cd ./dev
         echo ${GITHUB_REF##*/}
         terraform init -migrate-state
+        #  terraform init -backend-config key=bla -reconfigure for paralell state.
         terraform apply -auto-approve -var bucket_name=craigtfdev
 
-    # could add teardown here
+    #optional teardown here re-deploy any long lived dev branch in prod workflow (after master merge)
