@@ -26,12 +26,11 @@ jobs:
       with:
         terraform_wrapper: false
 
-    - name: Apply  # could throw branch var here for paralell builds.
+    - name: Apply
       run: |
         cd ./dev
-        echo ${GITHUB_REF##*/}
-        terraform init -migrate-state
-        #  terraform init -backend-config key=bla -reconfigure for paralell state.
-        terraform apply -auto-approve -var bucket_name=craigtfdev
+        echo Branch ${GITHUB_REF##*/}
+        terraform init -backend-config key=tfstatedev-${GITHUB_REF##*/} -reconfigure
+        terraform apply -auto-approve -var bucket_name=craigtfdev-${GITHUB_REF##*/}
 
-    #optional teardown here re-deploy any long lived dev branch in prod workflow (after master merge)
+    #optional teardown here or re-deploy any long lived dev branch in prod workflow (after master merge)
