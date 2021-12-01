@@ -29,5 +29,5 @@ jobs:
     - name: Apply
       run: |
         cd ./dev
-        #terraform init -reconfigure
+        terraform init -migrate-state
         terraform apply -auto-approve -var bucket_name=craigtfdev
