@@ -2,9 +2,10 @@
 
 
 Goals
-1. Seperate state for all feature branches (dev) and master (prod) - allows multipile feauture builds (in parallel) with seperate production build. 
-1. No workspaces, no grunt, no shared state between environments - allows seperate accounts & strong seperation.
-1. Re-use modules and resources... DRY
+1. No workspaces.
+1. No shared state.  (Allows seperate accounts)
+1. DRY
+
 
 
 
