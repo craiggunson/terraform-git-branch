@@ -23,8 +23,9 @@ jobs:
 
     - name: Terragrunt
       run: |
-        wget -O ~/.local/bin/terragrunt https://github.com/gruntwork-io/terragrunt/releases/download/v0.36.10/terragrunt_linux_amd64
-        chmod +x ~/.local/bin/terragrunt
+        wget -O ~/terragrunt https://github.com/gruntwork-io/terragrunt/releases/download/v0.36.10/terragrunt_linux_amd64
+        chmod +x ~/terragrunt
+        export PATH=$PATH:~/
         cd ./dev
         echo Branch ${GITHUB_REF##*/}
         terragrunt init
